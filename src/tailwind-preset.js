@@ -25,9 +25,12 @@ const preset = {
         'accent-soft': 'var(--mc-accent-soft)',
         'accent-ring': 'var(--mc-accent-ring)',
 
-        ok:     'var(--mc-ok)',
-        warn:   'var(--mc-warn)',
-        danger: 'var(--mc-danger)',
+        ok:            'var(--mc-ok)',
+        'ok-soft':     'var(--mc-ok-soft)',
+        warn:          'var(--mc-warn)',
+        'warn-soft':   'var(--mc-warn-soft)',
+        danger:        'var(--mc-danger)',
+        'danger-soft': 'var(--mc-danger-soft)',
 
         'cat-reg-bg': 'var(--mc-cat-reg-bg)', 'cat-reg-fg': 'var(--mc-cat-reg-fg)',
         'cat-cmp-bg': 'var(--mc-cat-cmp-bg)', 'cat-cmp-fg': 'var(--mc-cat-cmp-fg)',

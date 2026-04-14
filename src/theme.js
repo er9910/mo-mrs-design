@@ -23,9 +23,12 @@ const light = {
   accentSoft:  "rgba(0,113,227,0.10)",
   accentRing:  "rgba(0,113,227,0.28)",
 
-  ok:     "#29a745",
-  warn:   "#c97a00",
-  danger: "#d8322c",
+  ok:       "#29a745",
+  okSoft:   "rgba(41,167,69,0.12)",
+  warn:     "#c97a00",
+  warnSoft: "rgba(201,122,0,0.10)",
+  danger:   "#d8322c",
+  dangerSoft: "rgba(216,50,44,0.12)",
 
   catRegulatory: { bg: "#efeaff", fg: "#5b3fbf" },
   catCompetitor: { bg: "#fff1dd", fg: "#8a5a00" },
@@ -54,9 +57,12 @@ const dark = {
   accentSoft:  "rgba(10,132,255,0.18)",
   accentRing:  "rgba(10,132,255,0.45)",
 
-  ok:     "#32d158",
-  warn:   "#ff9f0a",
-  danger: "#ff453a",
+  ok:       "#32d158",
+  okSoft:   "rgba(50,209,88,0.18)",
+  warn:     "#ff9f0a",
+  warnSoft: "rgba(255,159,10,0.16)",
+  danger:   "#ff453a",
+  dangerSoft: "rgba(255,69,58,0.18)",
 
   catRegulatory: { bg: "rgba(139,110,255,0.20)", fg: "#c6b3ff" },
   catCompetitor: { bg: "rgba(255,169,77,0.20)",  fg: "#ffd399" },
@@ -123,9 +129,12 @@ export function paletteToCssVars(palette, shadows) {
     "--mc-accent-soft":   palette.accentSoft,
     "--mc-accent-ring":   palette.accentRing,
 
-    "--mc-ok":     palette.ok,
-    "--mc-warn":   palette.warn,
-    "--mc-danger": palette.danger,
+    "--mc-ok":          palette.ok,
+    "--mc-ok-soft":     palette.okSoft,
+    "--mc-warn":        palette.warn,
+    "--mc-warn-soft":   palette.warnSoft,
+    "--mc-danger":      palette.danger,
+    "--mc-danger-soft": palette.dangerSoft,
 
     "--mc-cat-reg-bg": palette.catRegulatory.bg, "--mc-cat-reg-fg": palette.catRegulatory.fg,
     "--mc-cat-cmp-bg": palette.catCompetitor.bg, "--mc-cat-cmp-fg": palette.catCompetitor.fg,
