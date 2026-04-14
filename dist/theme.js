@@ -1,8 +1,14 @@
 import {
+  applyTheme,
+  paletteToCssVars,
   theme,
-  theme_default
-} from "./chunk-UA6NXNZV.js";
+  theme_default,
+  watchSystemTheme
+} from "./chunk-BKDROZBC.js";
 export {
+  applyTheme,
   theme_default as default,
-  theme
+  paletteToCssVars,
+  theme,
+  watchSystemTheme
 };

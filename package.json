@@ -1,6 +1,6 @@
 {
   "name": "@monitorcorp/design",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Monitor Corp 내부 도구 공통 디자인 시스템",
   "type": "module",
@@ -9,7 +9,8 @@
   "exports": {
     ".": "./dist/index.js",
     "./theme": "./dist/theme.js",
-    "./tailwind-preset": "./dist/tailwind-preset.js"
+    "./tailwind-preset": "./dist/tailwind-preset.js",
+    "./hooks/useTheme": "./dist/hooks/useTheme.js"
   },
   "files": [
     "dist",
@@ -20,7 +21,8 @@
     "dev": "tsup --watch"
   },
   "peerDependencies": {
-    "react": ">=18"
+    "react": ">=18",
+    "lucide-react": ">=0.400.0"
   },
   "devDependencies": {
     "tsup": "^8.3.5",

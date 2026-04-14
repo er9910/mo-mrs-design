@@ -1,65 +1,66 @@
 // Tailwind preset for Monitor design system.
 // 소비 프로젝트에서: presets: [require('@monitorcorp/design/tailwind-preset')]
-
-import { theme as t } from './theme.js';
+//
+// 모든 색이 CSS variable을 참조합니다. 런타임에 applyTheme('dark')를 호출하면
+// 같은 유틸리티 클래스가 자동으로 다크 팔레트로 바뀝니다.
 
 const preset = {
   theme: {
     extend: {
       colors: {
-        bg:         t.color.bg,
-        surface:    t.color.surface,
-        'surface-2':t.color.surface2,
-        'surface-3':t.color.surface3,
+        bg:         'var(--mc-bg)',
+        surface:    'var(--mc-surface)',
+        'surface-2':'var(--mc-surface-2)',
+        'surface-3':'var(--mc-surface-3)',
 
-        ink:        t.color.ink,
-        'ink-2':    t.color.ink2,
-        'ink-3':    t.color.ink3,
-        'ink-4':    t.color.ink4,
+        ink:        'var(--mc-ink)',
+        'ink-2':    'var(--mc-ink-2)',
+        'ink-3':    'var(--mc-ink-3)',
+        'ink-4':    'var(--mc-ink-4)',
 
-        border:          t.color.border,
-        'border-strong': t.color.borderStrong,
+        border:          'var(--mc-border)',
+        'border-strong': 'var(--mc-border-strong)',
 
-        accent:        t.color.accent,
-        'accent-soft': t.color.accentSoft,
-        'accent-ring': t.color.accentRing,
+        accent:        'var(--mc-accent)',
+        'accent-soft': 'var(--mc-accent-soft)',
+        'accent-ring': 'var(--mc-accent-ring)',
 
-        'chart-1': t.color.chart1,
-        'chart-2': t.color.chart2,
-        'chart-3': t.color.chart3,
-        'chart-4': t.color.chart4,
-        'chart-5': t.color.chart5,
+        ok:     'var(--mc-ok)',
+        warn:   'var(--mc-warn)',
+        danger: 'var(--mc-danger)',
 
-        ok:     t.color.ok,
-        warn:   t.color.warn,
-        danger: t.color.danger,
+        'cat-reg-bg': 'var(--mc-cat-reg-bg)', 'cat-reg-fg': 'var(--mc-cat-reg-fg)',
+        'cat-cmp-bg': 'var(--mc-cat-cmp-bg)', 'cat-cmp-fg': 'var(--mc-cat-cmp-fg)',
+        'cat-aca-bg': 'var(--mc-cat-aca-bg)', 'cat-aca-fg': 'var(--mc-cat-aca-fg)',
+        'cat-mkt-bg': 'var(--mc-cat-mkt-bg)', 'cat-mkt-fg': 'var(--mc-cat-mkt-fg)',
 
-        'cat-reg-bg': t.color.catRegulatory.bg, 'cat-reg-fg': t.color.catRegulatory.fg,
-        'cat-cmp-bg': t.color.catCompetitor.bg, 'cat-cmp-fg': t.color.catCompetitor.fg,
-        'cat-aca-bg': t.color.catAcademic.bg,   'cat-aca-fg': t.color.catAcademic.fg,
-        'cat-mkt-bg': t.color.catMarket.bg,     'cat-mkt-fg': t.color.catMarket.fg,
+        'chart-1': 'var(--mc-chart-1)',
+        'chart-2': 'var(--mc-chart-2)',
+        'chart-3': 'var(--mc-chart-3)',
+        'chart-4': 'var(--mc-chart-4)',
+        'chart-5': 'var(--mc-chart-5)',
       },
       borderRadius: {
-        'mc-sm': `${t.radius.sm}px`,
-        'mc-md': `${t.radius.md}px`,
-        'mc-lg': `${t.radius.lg}px`,
-        'mc-xl': `${t.radius.xl}px`,
+        'mc-sm': '6px',
+        'mc-md': '10px',
+        'mc-lg': '14px',
+        'mc-xl': '20px',
       },
       boxShadow: {
-        s1: t.shadow.s1,
-        s2: t.shadow.s2,
-        s3: t.shadow.s3,
+        s1: 'var(--mc-shadow-s1)',
+        s2: 'var(--mc-shadow-s2)',
+        s3: 'var(--mc-shadow-s3)',
       },
       fontFamily: {
-        ui:   t.font.ui.split(',').map(s => s.trim().replace(/^"|"$/g, '')),
-        mono: t.font.mono.split(',').map(s => s.trim().replace(/^"|"$/g, '')),
+        ui:   ['-apple-system','BlinkMacSystemFont','SF Pro Text','Pretendard','Apple SD Gothic Neo','Helvetica Neue','Arial','sans-serif'],
+        mono: ['ui-monospace','SF Mono','Menlo','JetBrains Mono','monospace'],
       },
       letterSpacing: {
         tight2:  '-0.02em',
         eyebrow: '0.08em',
       },
       transitionTimingFunction: {
-        mc: t.motion.ease,
+        mc: 'cubic-bezier(.2,.8,.2,1)',
       },
       transitionDuration: {
         mc: '220ms',
