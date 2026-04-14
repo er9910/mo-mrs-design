@@ -24,27 +24,26 @@ var light = {
   chart: ["#0071e3", "#3d94ea", "#79b4f1", "#b5d5f7", "#d9e9fb"]
 };
 var dark = {
-  bg: "#0a0a0b",
-  surface: "#141417",
-  surface2: "#1c1c20",
-  surface3: "#26262b",
+  bg: "#070708",
+  surface: "#18181b",
+  surface2: "#212125",
+  surface3: "#2c2c31",
   ink: "#f5f5f7",
   ink2: "#c7c7cc",
-  ink3: "#8e8e93",
-  ink4: "#636366",
-  border: "rgba(255,255,255,0.08)",
-  borderStrong: "rgba(255,255,255,0.16)",
+  ink3: "#98989e",
+  ink4: "#6d6d73",
+  border: "rgba(255,255,255,0.10)",
+  borderStrong: "rgba(255,255,255,0.18)",
   accent: "#0a84ff",
-  // Apple dark-mode systemBlue (light보다 약간 밝음)
-  accentSoft: "rgba(10,132,255,0.16)",
-  accentRing: "rgba(10,132,255,0.40)",
+  accentSoft: "rgba(10,132,255,0.18)",
+  accentRing: "rgba(10,132,255,0.45)",
   ok: "#32d158",
   warn: "#ff9f0a",
   danger: "#ff453a",
-  catRegulatory: { bg: "rgba(139,110,255,0.18)", fg: "#c6b3ff" },
-  catCompetitor: { bg: "rgba(255,169,77,0.18)", fg: "#ffd399" },
-  catAcademic: { bg: "rgba(100,160,255,0.18)", fg: "#a8c6ff" },
-  catMarket: { bg: "rgba(80,200,130,0.18)", fg: "#a4e2ba" },
+  catRegulatory: { bg: "rgba(139,110,255,0.20)", fg: "#c6b3ff" },
+  catCompetitor: { bg: "rgba(255,169,77,0.20)", fg: "#ffd399" },
+  catAcademic: { bg: "rgba(100,160,255,0.20)", fg: "#a8c6ff" },
+  catMarket: { bg: "rgba(80,200,130,0.20)", fg: "#a4e2ba" },
   chart: ["#0a84ff", "#4aa3ff", "#7bbeff", "#a9d4ff", "#d1e7ff"]
 };
 var theme = {
