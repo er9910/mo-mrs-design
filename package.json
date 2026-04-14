@@ -17,13 +17,13 @@
   ],
   "scripts": {
     "build": "tsup",
-    "prepare": "npm run build",
     "dev": "tsup --watch"
   },
   "peerDependencies": {
     "react": ">=18"
   },
   "devDependencies": {
-    "tsup": "^8.3.5"
+    "tsup": "^8.3.5",
+    "typescript": "^6.0.2"
   }
 }
