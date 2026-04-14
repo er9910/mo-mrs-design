@@ -1,6 +1,6 @@
 import {
   theme
-} from "./chunk-LPR2RVK7.js";
+} from "./chunk-UA6NXNZV.js";
 
 // src/ui/Chip.jsx
 import React from "react";

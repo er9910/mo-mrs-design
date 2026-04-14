@@ -24,6 +24,12 @@ const preset = {
         'accent-soft': t.color.accentSoft,
         'accent-ring': t.color.accentRing,
 
+        'chart-1': t.color.chart1,
+        'chart-2': t.color.chart2,
+        'chart-3': t.color.chart3,
+        'chart-4': t.color.chart4,
+        'chart-5': t.color.chart5,
+
         ok:     t.color.ok,
         warn:   t.color.warn,
         danger: t.color.danger,

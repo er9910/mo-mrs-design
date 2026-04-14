@@ -1,6 +1,6 @@
 import {
   theme
-} from "./chunk-LPR2RVK7.js";
+} from "./chunk-UA6NXNZV.js";
 
 // src/tailwind-preset.js
 var preset = {
@@ -20,6 +20,11 @@ var preset = {
         accent: theme.color.accent,
         "accent-soft": theme.color.accentSoft,
         "accent-ring": theme.color.accentRing,
+        "chart-1": theme.color.chart1,
+        "chart-2": theme.color.chart2,
+        "chart-3": theme.color.chart3,
+        "chart-4": theme.color.chart4,
+        "chart-5": theme.color.chart5,
         ok: theme.color.ok,
         warn: theme.color.warn,
         danger: theme.color.danger,

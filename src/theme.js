@@ -20,6 +20,13 @@ export const theme = {
     accentSoft:  "rgba(0,113,227,0.10)",
     accentRing:  "rgba(0,113,227,0.28)",
 
+    // 차트 팔레트 — accent 기반 5단계 그라데이션
+    chart1: "#0071e3",          // accent (primary)
+    chart2: "#34a0f5",          // lighter blue
+    chart3: "#7fc4fb",          // soft blue
+    chart4: "#b4d9fa",          // pastel blue
+    chart5: "#d6eafc",          // near-white blue
+
     ok:     "#29a745",
     warn:   "#c97a00",
     danger: "#d8322c",
