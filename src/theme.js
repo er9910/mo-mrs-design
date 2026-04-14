@@ -24,11 +24,11 @@ const light = {
   accentRing:  "rgba(0,113,227,0.28)",
 
   ok:       "#29a745",
-  okSoft:   "rgba(41,167,69,0.12)",
+  okSoft:   "rgba(41,167,69,0.08)",
   warn:     "#c97a00",
-  warnSoft: "rgba(201,122,0,0.10)",
+  warnSoft: "rgba(201,122,0,0.07)",
   danger:   "#d8322c",
-  dangerSoft: "rgba(216,50,44,0.12)",
+  dangerSoft: "rgba(216,50,44,0.08)",
 
   catRegulatory: { bg: "#efeaff", fg: "#5b3fbf" },
   catCompetitor: { bg: "#fff1dd", fg: "#8a5a00" },
@@ -58,11 +58,11 @@ const dark = {
   accentRing:  "rgba(10,132,255,0.45)",
 
   ok:       "#32d158",
-  okSoft:   "rgba(50,209,88,0.18)",
+  okSoft:   "rgba(50,209,88,0.12)",
   warn:     "#ff9f0a",
-  warnSoft: "rgba(255,159,10,0.16)",
+  warnSoft: "rgba(255,159,10,0.10)",
   danger:   "#ff453a",
-  dangerSoft: "rgba(255,69,58,0.18)",
+  dangerSoft: "rgba(255,69,58,0.12)",
 
   catRegulatory: { bg: "rgba(139,110,255,0.20)", fg: "#c6b3ff" },
   catCompetitor: { bg: "rgba(255,169,77,0.20)",  fg: "#ffd399" },
