@@ -1,6 +1,6 @@
 {
   "name": "@monitorcorp/design",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": true,
   "description": "Monitor Corp 내부 도구 공통 디자인 시스템",
   "type": "module",
