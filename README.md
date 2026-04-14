@@ -14,18 +14,18 @@ Monitor Corp 내부 도구 공통 디자인 시스템.
 ## 소비 프로젝트에 설치
 
 ```bash
-npm install github:monitorcorp/monitor-design
+npm install github:er9910/mo-mrs-design
 ```
 
 특정 버전/커밋 고정:
 
 ```bash
-npm install github:monitorcorp/monitor-design#v0.1.0
-npm install github:monitorcorp/monitor-design#<commit-sha>
+npm install github:er9910/mo-mrs-design#v0.1.0
+npm install github:er9910/mo-mrs-design#<commit-sha>
 ```
 
 Private 레포면 인증이 필요합니다:
-- 로컬: `gh auth login` 또는 SSH 키 설정 (`git+ssh://git@github.com:monitorcorp/monitor-design.git`)
+- 로컬: `gh auth login` 또는 SSH 키 설정 (`git+ssh://git@github.com:er9910/mo-mrs-design.git`)
 - CI: PAT을 `NPM_TOKEN` 또는 `GITHUB_TOKEN` 환경변수로 전달
 
 ---
@@ -104,7 +104,7 @@ npm run build      # dist/ 생성
 npm run dev        # tsup watch 모드
 ```
 
-빌드 산출물은 `dist/`에 생성되고 커밋되지 않습니다. 소비 프로젝트가 `npm install`할 때 `prepare` 스크립트가 자동 실행되어 빌드됩니다.
+빌드 산출물은 `dist/`에 생성되며 레포에 커밋되어 있습니다. 소비 프로젝트에서 별도 빌드 없이 바로 사용 가능합니다.
 
 ---
 
