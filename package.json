@@ -1,0 +1,29 @@
+{
+  "name": "@monitorcorp/design",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Monitor Corp 내부 도구 공통 디자인 시스템",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./theme": "./dist/theme.js",
+    "./tailwind-preset": "./dist/tailwind-preset.js"
+  },
+  "files": [
+    "dist",
+    "CLAUDE.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "prepare": "npm run build",
+    "dev": "tsup --watch"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5"
+  }
+}
