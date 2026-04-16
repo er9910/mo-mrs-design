@@ -46,9 +46,12 @@ import { theme as t } from '@monitorcorp/design/theme';
 }} />
 ```
 
-### 프리미티브 사용
+### 프리미티브 사용 (React)
+
+**⚠️ CSS 필수**: 프리미티브 스타일은 별도 CSS에 분리되어 있음. 소비 앱 진입점에서 한번 import:
 
 ```jsx
+import '@monitorcorp/design/css/primitives.css';
 import { Chip, Button, Card, CardHeader, EmptyState, Stat } from '@monitorcorp/design';
 
 <Card>
@@ -68,6 +71,33 @@ import { Chip, Button, Card, CardHeader, EmptyState, Stat } from '@monitorcorp/d
   action={<Button variant="primary">수집 시작</Button>}
 />
 ```
+
+### 프리미티브 사용 (정적 HTML · React 없음)
+
+`dist/css/primitives.css`에 React 프리미티브와 **동일 스타일**이 CSS 클래스로 배포됨.
+tokens.css와 함께 로드하면 React 없이도 디자인 시스템 외관을 그대로 사용 가능.
+
+```html
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="primitives.css">
+
+<button class="mc-btn mc-btn--primary mc-btn--md">수집 시작</button>
+
+<div class="mc-card">
+  <div class="mc-card-header">
+    <div class="mc-card-header__main">
+      <div class="mc-card-header__title">Recent papers</div>
+      <div class="mc-card-header__subtitle">Last updated 2h ago</div>
+    </div>
+  </div>
+  <span class="mc-chip mc-chip--regulatory">규제</span>
+</div>
+```
+
+클래스 이름 규칙:
+- 블록: `mc-btn`, `mc-chip`, `mc-card`, `mc-card-header`, `mc-empty`, `mc-stat`
+- 변형(modifier): `mc-btn--primary`, `mc-chip--regulatory`, `mc-stat__delta--up` 등
+- 엘리먼트: `mc-card__accent`, `mc-card-header__title`, `mc-empty__label` 등
 
 ### Tailwind 프로젝트
 

@@ -1,0 +1,203 @@
+/*
+ * Monitor Corp Design System — Primitive CSS classes
+ *
+ * 이 파일은 src/ui/ 의 React 프리미티브와 **동일한 스타일**을 CSS 클래스로 제공.
+ * 목적: 정적 HTML 소비자(예: docs/index.html)도 React 앱과 똑같은 외관을 얻도록.
+ *
+ * 소비 방법:
+ *   - 정적 HTML: <link rel="stylesheet" href="primitives.css">
+ *                <button class="mc-btn mc-btn--primary mc-btn--md">Click</button>
+ *   - React:     <Button variant="primary" size="md"> (내부적으로 동일 className 사용)
+ *
+ * 규칙:
+ *   - 하드코딩 hex 금지. 모든 색은 var(--mc-*) 토큰.
+ *   - Radius: 6/10/14/20 (--mc-radius-sm/md/lg/xl) 또는 9999 (pill).
+ *   - Transition: var(--mc-motion-dur) var(--mc-motion-ease).
+ *   - 폰트: var(--mc-font-ui) / var(--mc-font-mono).
+ */
+
+/* ──────────── Chip ──────────── */
+.mc-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  line-height: 1.4;
+  background: var(--mc-surface-2);
+  color: var(--mc-ink-2);
+  font-family: var(--mc-font-ui);
+}
+.mc-chip--dot { gap: 6px; }
+.mc-chip__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: currentColor;
+  opacity: 0.8;
+}
+.mc-chip--regulatory { background: var(--mc-cat-reg-bg); color: var(--mc-cat-reg-fg); }
+.mc-chip--competitor { background: var(--mc-cat-cmp-bg); color: var(--mc-cat-cmp-fg); }
+.mc-chip--academic   { background: var(--mc-cat-aca-bg); color: var(--mc-cat-aca-fg); }
+.mc-chip--market     { background: var(--mc-cat-mkt-bg); color: var(--mc-cat-mkt-fg); }
+.mc-chip--ok         { background: var(--mc-ok-soft);     color: var(--mc-ok); }
+.mc-chip--warn       { background: var(--mc-warn-soft);   color: var(--mc-warn); }
+.mc-chip--danger     { background: var(--mc-danger-soft); color: var(--mc-danger); }
+.mc-chip--accent     { background: var(--mc-accent-soft); color: var(--mc-accent); }
+.mc-chip--neutral    { background: var(--mc-surface-2);   color: var(--mc-ink-2); }
+
+/* ──────────── Button ──────────── */
+.mc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--mc-surface);
+  color: var(--mc-ink);
+  border: 1px solid var(--mc-border);
+  border-radius: var(--mc-radius-md);
+  padding: 10px 16px;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: var(--mc-font-ui);
+  cursor: pointer;
+  transition:
+    background var(--mc-motion-dur) var(--mc-motion-ease),
+    color      var(--mc-motion-dur) var(--mc-motion-ease),
+    box-shadow var(--mc-motion-dur) var(--mc-motion-ease),
+    transform  var(--mc-motion-dur) var(--mc-motion-ease);
+}
+.mc-btn:hover:not(:disabled):not([aria-disabled="true"]) {
+  box-shadow: var(--mc-shadow-s2);
+  transform: translateY(-1px);
+}
+.mc-btn:disabled,
+.mc-btn[aria-disabled="true"] {
+  background: var(--mc-surface-2);
+  color: var(--mc-ink-4);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.mc-btn--sm { padding: 6px 12px;  font-size: 12px;   border-radius: var(--mc-radius-sm); }
+.mc-btn--md { padding: 10px 16px; font-size: 13.5px; border-radius: var(--mc-radius-md); }
+.mc-btn--lg { padding: 12px 20px; font-size: 14px;   border-radius: var(--mc-radius-md); }
+
+.mc-btn--primary { background: var(--mc-accent); color: var(--mc-on-accent); border-color: transparent; }
+.mc-btn--ghost   { background: transparent;      color: var(--mc-ink-2);    border-color: transparent; }
+.mc-btn--ghost:hover:not(:disabled) { background: var(--mc-surface-2); }
+.mc-btn--success { background: var(--mc-ok);     color: var(--mc-on-accent); border-color: transparent; }
+.mc-btn--danger  { background: var(--mc-danger); color: var(--mc-on-accent); border-color: transparent; }
+
+/* ──────────── Card ──────────── */
+.mc-card {
+  position: relative;
+  background: var(--mc-surface);
+  border: 1px solid var(--mc-border);
+  border-radius: var(--mc-radius-lg);
+  box-shadow: var(--mc-shadow-s1);
+  padding: 20px;
+  overflow: hidden;
+  transition:
+    box-shadow var(--mc-motion-dur) var(--mc-motion-ease),
+    transform  var(--mc-motion-dur) var(--mc-motion-ease);
+}
+.mc-card__accent {
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--mc-accent);
+}
+
+/* ──────────── CardHeader ──────────── */
+.mc-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.mc-card-header__main { min-width: 0; }
+.mc-card-header__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--mc-ink);
+  line-height: 1.3;
+}
+.mc-card-header__subtitle {
+  font-size: 12px;
+  color: var(--mc-ink-3);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+.mc-card-header__right { flex-shrink: 0; }
+
+/* ──────────── EmptyState ──────────── */
+.mc-empty {
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--mc-surface);
+  border: 1px solid var(--mc-border);
+  border-radius: var(--mc-radius-lg);
+}
+.mc-empty__label {
+  font-size: 11px;
+  color: var(--mc-ink-4);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+.mc-empty__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--mc-ink-2);
+}
+.mc-empty__title--with-desc { margin-bottom: 6px; }
+.mc-empty__description {
+  font-size: 13.5px;
+  color: var(--mc-ink-3);
+  line-height: 1.5;
+}
+.mc-empty__action { margin-top: 16px; }
+
+/* ──────────── Stat ──────────── */
+.mc-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.mc-stat__label {
+  font-size: 11px;
+  color: var(--mc-ink-4);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.mc-stat__row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.mc-stat__value {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--mc-ink);
+  letter-spacing: -0.02em;
+  font-family: var(--mc-font-mono);
+}
+.mc-stat__unit {
+  font-size: 12px;
+  color: var(--mc-ink-3);
+}
+.mc-stat__delta {
+  font-size: 12px;
+  color: var(--mc-ink-3);
+  font-family: var(--mc-font-mono);
+}
+.mc-stat__delta--up      { color: var(--mc-ok); }
+.mc-stat__delta--down    { color: var(--mc-danger); }
+.mc-stat__delta--neutral { color: var(--mc-ink-3); }

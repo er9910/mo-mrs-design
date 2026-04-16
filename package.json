@@ -10,14 +10,15 @@
     ".": "./dist/index.js",
     "./theme": "./dist/theme.js",
     "./tailwind-preset": "./dist/tailwind-preset.js",
-    "./hooks/useTheme": "./dist/hooks/useTheme.js"
+    "./hooks/useTheme": "./dist/hooks/useTheme.js",
+    "./css/primitives.css": "./dist/css/primitives.css"
   },
   "files": [
     "dist",
     "CLAUDE.md"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "tsup && node scripts/build-post.mjs",
     "dev": "tsup --watch"
   },
   "peerDependencies": {

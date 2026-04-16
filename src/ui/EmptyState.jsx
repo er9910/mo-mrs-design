@@ -1,56 +1,27 @@
 import React from 'react';
 
+const cx = (...xs) => xs.filter(Boolean).join(' ');
+
 /**
  * Centered empty-state placeholder.
+ * Styles come from primitives.css — consumer must load @monitorcorp/design/dist/css/primitives.css.
+ *
  * @param {string} label - Eyebrow label (uppercase, ink-4)
  * @param {string} title - Main heading
  * @param {string} description - Supporting text
  * @param {React.ReactNode} action - CTA button or link
  */
-export function EmptyState({ label, title, description, action, style, ...rest }) {
+export function EmptyState({ label, title, description, action, className, ...rest }) {
   return (
-    <div
-      {...rest}
-      style={{
-        textAlign: 'center',
-        padding: '60px 20px',
-        background: 'var(--mc-surface)',
-        border: '1px solid var(--mc-border)',
-        borderRadius: 14,
-        ...style,
-      }}
-    >
-      {label && (
-        <div style={{
-          fontSize: 11,
-          color: 'var(--mc-ink-4)',
-          textTransform: 'uppercase',
-          letterSpacing: '0.08em',
-          marginBottom: 8,
-        }}>
-          {label}
-        </div>
-      )}
+    <div {...rest} className={cx('mc-empty', className)}>
+      {label && <div className="mc-empty__label">{label}</div>}
       {title && (
-        <div style={{
-          fontSize: 14,
-          fontWeight: 600,
-          color: 'var(--mc-ink-2)',
-          marginBottom: description ? 6 : 0,
-        }}>
+        <div className={cx('mc-empty__title', description && 'mc-empty__title--with-desc')}>
           {title}
         </div>
       )}
-      {description && (
-        <div style={{
-          fontSize: 13.5,
-          color: 'var(--mc-ink-3)',
-          lineHeight: 1.5,
-        }}>
-          {description}
-        </div>
-      )}
-      {action && <div style={{ marginTop: 16 }}>{action}</div>}
+      {description && <div className="mc-empty__description">{description}</div>}
+      {action && <div className="mc-empty__action">{action}</div>}
     </div>
   );
 }
