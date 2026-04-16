@@ -8,9 +8,6 @@ import {
   watchSystemTheme
 } from "./chunk-S3GQG74L.js";
 
-// util
-var cx = (...xs) => xs.filter(Boolean).join(" ");
-
 // src/ui/ThemeToggle.jsx
 import React from "react";
 import { Sun, Moon, Monitor } from "lucide-react";
@@ -67,19 +64,23 @@ function ThemeToggle({ style, compact = false, ...rest }) {
 }
 
 // src/ui/Chip.jsx
+import React2 from "react";
+var cx = (...xs) => xs.filter(Boolean).join(" ");
 function Chip({ tint = "neutral", dot = false, className, children, ...rest }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ React2.createElement(
     "span",
     {
       ...rest,
       className: cx("mc-chip", `mc-chip--${tint}`, dot && "mc-chip--dot", className)
     },
-    dot && /* @__PURE__ */ React.createElement("span", { className: "mc-chip__dot", "aria-hidden": "true" }),
+    dot && /* @__PURE__ */ React2.createElement("span", { className: "mc-chip__dot", "aria-hidden": "true" }),
     children
   );
 }
 
 // src/ui/Button.jsx
+import React3 from "react";
+var cx2 = (...xs) => xs.filter(Boolean).join(" ");
 function Button({
   variant = "default",
   size = "md",
@@ -90,12 +91,12 @@ function Button({
   children,
   ...rest
 }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ React3.createElement(
     "button",
     {
       ...rest,
       disabled,
-      className: cx(
+      className: cx2(
         "mc-btn",
         `mc-btn--${size}`,
         variant !== "default" && `mc-btn--${variant}`,
@@ -109,71 +110,40 @@ function Button({
 }
 
 // src/ui/Card.jsx
+import React4 from "react";
+var cx3 = (...xs) => xs.filter(Boolean).join(" ");
 function Card({ padding, accent, className, style, children, ...rest }) {
   const combinedStyle = padding != null ? { ...style, padding } : style;
-  return /* @__PURE__ */ React.createElement(
-    "div",
-    { ...rest, className: cx("mc-card", className), style: combinedStyle },
-    accent && /* @__PURE__ */ React.createElement("span", {
+  return /* @__PURE__ */ React4.createElement("div", { ...rest, className: cx3("mc-card", className), style: combinedStyle }, accent && /* @__PURE__ */ React4.createElement(
+    "span",
+    {
       "aria-hidden": "true",
       className: "mc-card__accent",
       style: typeof accent === "string" ? { background: accent } : void 0
-    }),
-    children
-  );
+    }
+  ), children);
 }
 
 // src/ui/CardHeader.jsx
+import React5 from "react";
+var cx4 = (...xs) => xs.filter(Boolean).join(" ");
 function CardHeader({ title, subtitle, right, className, ...rest }) {
-  return /* @__PURE__ */ React.createElement(
-    "div",
-    { ...rest, className: cx("mc-card-header", className) },
-    /* @__PURE__ */ React.createElement(
-      "div",
-      { className: "mc-card-header__main" },
-      title && /* @__PURE__ */ React.createElement("div", { className: "mc-card-header__title" }, title),
-      subtitle && /* @__PURE__ */ React.createElement("div", { className: "mc-card-header__subtitle" }, subtitle)
-    ),
-    right && /* @__PURE__ */ React.createElement("div", { className: "mc-card-header__right" }, right)
-  );
+  return /* @__PURE__ */ React5.createElement("div", { ...rest, className: cx4("mc-card-header", className) }, /* @__PURE__ */ React5.createElement("div", { className: "mc-card-header__main" }, title && /* @__PURE__ */ React5.createElement("div", { className: "mc-card-header__title" }, title), subtitle && /* @__PURE__ */ React5.createElement("div", { className: "mc-card-header__subtitle" }, subtitle)), right && /* @__PURE__ */ React5.createElement("div", { className: "mc-card-header__right" }, right));
 }
 
 // src/ui/EmptyState.jsx
+import React6 from "react";
+var cx5 = (...xs) => xs.filter(Boolean).join(" ");
 function EmptyState({ label, title, description, action, className, ...rest }) {
-  return /* @__PURE__ */ React.createElement(
-    "div",
-    { ...rest, className: cx("mc-empty", className) },
-    label && /* @__PURE__ */ React.createElement("div", { className: "mc-empty__label" }, label),
-    title && /* @__PURE__ */ React.createElement(
-      "div",
-      { className: cx("mc-empty__title", description && "mc-empty__title--with-desc") },
-      title
-    ),
-    description && /* @__PURE__ */ React.createElement("div", { className: "mc-empty__description" }, description),
-    action && /* @__PURE__ */ React.createElement("div", { className: "mc-empty__action" }, action)
-  );
+  return /* @__PURE__ */ React6.createElement("div", { ...rest, className: cx5("mc-empty", className) }, label && /* @__PURE__ */ React6.createElement("div", { className: "mc-empty__label" }, label), title && /* @__PURE__ */ React6.createElement("div", { className: cx5("mc-empty__title", description && "mc-empty__title--with-desc") }, title), description && /* @__PURE__ */ React6.createElement("div", { className: "mc-empty__description" }, description), action && /* @__PURE__ */ React6.createElement("div", { className: "mc-empty__action" }, action));
 }
 
 // src/ui/Stat.jsx
+import React7 from "react";
+var cx6 = (...xs) => xs.filter(Boolean).join(" ");
 function Stat({ label, value, unit, delta, deltaTone = "neutral", className, ...rest }) {
-  return /* @__PURE__ */ React.createElement(
-    "div",
-    { ...rest, className: cx("mc-stat", className) },
-    label && /* @__PURE__ */ React.createElement("div", { className: "mc-stat__label" }, label),
-    /* @__PURE__ */ React.createElement(
-      "div",
-      { className: "mc-stat__row" },
-      /* @__PURE__ */ React.createElement("span", { className: "mc-stat__value" }, value),
-      unit && /* @__PURE__ */ React.createElement("span", { className: "mc-stat__unit" }, unit)
-    ),
-    delta && /* @__PURE__ */ React.createElement(
-      "div",
-      { className: cx("mc-stat__delta", `mc-stat__delta--${deltaTone}`) },
-      delta
-    )
-  );
+  return /* @__PURE__ */ React7.createElement("div", { ...rest, className: cx6("mc-stat", className) }, label && /* @__PURE__ */ React7.createElement("div", { className: "mc-stat__label" }, label), /* @__PURE__ */ React7.createElement("div", { className: "mc-stat__row" }, /* @__PURE__ */ React7.createElement("span", { className: "mc-stat__value" }, value), unit && /* @__PURE__ */ React7.createElement("span", { className: "mc-stat__unit" }, unit)), delta && /* @__PURE__ */ React7.createElement("div", { className: cx6("mc-stat__delta", `mc-stat__delta--${deltaTone}`) }, delta));
 }
-
 export {
   Button,
   Card,
