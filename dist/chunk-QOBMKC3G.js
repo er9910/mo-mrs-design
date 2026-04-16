@@ -67,8 +67,10 @@ var theme = {
     s3: "0 20px 40px -12px rgba(0,0,0,.64), 0 4px 8px rgba(0,0,0,.32)"
   },
   font: {
-    ui: `-apple-system, BlinkMacSystemFont, "SF Pro Text", "Pretendard", "Apple SD Gothic Neo", "Helvetica Neue", Arial, sans-serif`,
-    mono: `ui-monospace, "SF Mono", Menlo, "JetBrains Mono", monospace`
+    // Mac 시스템 → Pretendard(CDN) → Mac Korean → Windows 시스템 → Windows Korean → generic 순.
+    // Windows 에서 Pretendard 가 로드되지 않은 환경에서도 Segoe UI + Malgun Gothic 로 깨지지 않도록.
+    ui: `-apple-system, BlinkMacSystemFont, "SF Pro Text", "Pretendard", "Apple SD Gothic Neo", "Segoe UI", "Malgun Gothic", "\uB9D1\uC740 \uACE0\uB515", "Helvetica Neue", Arial, sans-serif`,
+    mono: `ui-monospace, "SF Mono", Menlo, "JetBrains Mono", Consolas, "Courier New", monospace`
   },
   motion: { ease: "cubic-bezier(.2,.8,.2,1)", dur: ".22s" },
   // 팔레트 직접 접근용
