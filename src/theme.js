@@ -90,8 +90,10 @@ export const theme = {
   },
 
   font: {
-    ui:   `-apple-system, BlinkMacSystemFont, "SF Pro Text", "Pretendard", "Apple SD Gothic Neo", "Helvetica Neue", Arial, sans-serif`,
-    mono: `ui-monospace, "SF Mono", Menlo, "JetBrains Mono", monospace`,
+    // Mac 시스템 → Pretendard(CDN) → Mac Korean → Windows 시스템 → Windows Korean → generic 순.
+    // Windows 에서 Pretendard 가 로드되지 않은 환경에서도 Segoe UI + Malgun Gothic 로 깨지지 않도록.
+    ui:   `-apple-system, BlinkMacSystemFont, "SF Pro Text", "Pretendard", "Apple SD Gothic Neo", "Segoe UI", "Malgun Gothic", "맑은 고딕", "Helvetica Neue", Arial, sans-serif`,
+    mono: `ui-monospace, "SF Mono", Menlo, "JetBrains Mono", Consolas, "Courier New", monospace`,
   },
 
   motion: { ease: "cubic-bezier(.2,.8,.2,1)", dur: ".22s" },
