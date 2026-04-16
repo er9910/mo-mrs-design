@@ -1,0 +1,41 @@
+name: Build dist
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'package.json'
+      - 'tsup.config.js'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Build dist
+        run: npm run build
+
+      - name: Commit dist if changed
+        run: |
+          if [[ -n "$(git status --porcelain dist/)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add dist/
+            git commit -m "chore(dist): rebuild from src [skip ci]"
+            git push
+          else
+            echo "No dist changes."
+          fi
